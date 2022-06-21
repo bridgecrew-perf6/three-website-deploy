@@ -1,5 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
+import bg from "./bg/scene-bg.jpeg";//importとして画像パスを読み込むとビルド時にも正常にパスが当たるはず
 
 //canvas
 const canvas = document.querySelector("#webgl");
@@ -9,7 +10,7 @@ const scene = new THREE.Scene();
 
 //背景テクスチャ
 const textureLoader = new THREE.TextureLoader();
-const bgTexture = textureLoader.load("bg/scene-bg.jpeg");
+const bgTexture = textureLoader.load(bg);
 scene.background = bgTexture;
 
 //サイズ
